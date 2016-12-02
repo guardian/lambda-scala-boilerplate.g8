@@ -94,8 +94,8 @@ Resources:
       Description: Event sent to process the previous day of data
       ScheduleExpression: cron(14 3 * * ? *)
       Targets:
-        - Id: ContributionsDataLakeLambda
-          Arn: !GetAtt ContributionsDataLakeLambda.Arn
+        - Id: Lambda
+          Arn: !GetAtt Lambda.Arn
 
   DailyEventLambdaPermission:
     Type: AWS::Lambda::Permission
