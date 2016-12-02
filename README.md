@@ -1,5 +1,12 @@
 # Lambda boilerplate (scala)
 
+## Features
+* A lambda skeleton written in scala
+* Provides an example cloudformation stack
+* The lambda is triggered daily via an event _(you probably want to change that)_
+* Uses the new `riff-raff.yaml`
+* Automatically deploys the cloudformation via riff-raff
+
 ## Customise
 1. Clone the repository
 2. Change the `name` value in `build.sbt`
