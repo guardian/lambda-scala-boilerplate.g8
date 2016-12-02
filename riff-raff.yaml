@@ -1,0 +1,18 @@
+stacks: [boilerplate]
+regions: [eu-west-1]
+
+deployments:
+  lambda-scala-boilerplate:
+    type: aws-lambda
+    parameters:
+      bucket: boilerplate-dist
+      functionNames: [lambda-scala-boilerplate-]
+      fileName: lambda-scala-boilerplate.jar
+      prefixStack: false
+    dependencies: [lambda-scala-boilerplate-cfn]
+  lambda-scala-boilerplate-cfn:
+    type: cloud-formation
+    parameters:
+      prependStackToCloudFormationStackName: false
+      cloudFormationStackName: lambda-scala-boilerplate
+      templatePath: cfn.yaml
