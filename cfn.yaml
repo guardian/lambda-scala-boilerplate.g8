@@ -20,13 +20,6 @@ Parameters:
     Description: Bucket where RiffRaff uploads artifacts on deploy
     Type: String
     Default: boilerplate-dist
-  # These two parameters are optional, feel free to remove VPC and Subnets from this template if you don't need it
-  VpcId:
-    Description: Vpc id
-    Type: String
-  Subnets:
-    Description: subnets id
-    Type: CommaDelimitedList
 Resources:
   ExecutionRole:
     Type: AWS::IAM::Role
@@ -56,15 +49,6 @@ Resources:
               Action:
                 - lambda:InvokeFunction
               Resource: "*"
-        - PolicyName: vpc
-          PolicyDocument:
-            Statement:
-              Effect: Allow
-              Action:
-                - ec2:CreateNetworkInterface
-                - ec2:DescribeNetworkInterfaces
-                - ec2:DeleteNetworkInterface
-              Resource: "*"
   Lambda:
     Type: AWS::Lambda::Function
     Properties:
@@ -84,9 +68,6 @@ Resources:
       Role: !GetAtt ExecutionRole.Arn
       Runtime: java8
       Timeout: 60
-      VpcConfig:
-        SubnetIds: !Ref Subnets
-        SecurityGroupIds: [!GetAtt LambdaSecurityGroup.GroupId]
 
   DailyEvent:
     Type: AWS::Events::Rule
