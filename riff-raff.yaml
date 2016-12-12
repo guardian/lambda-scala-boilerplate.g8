@@ -12,6 +12,7 @@ deployments:
     dependencies: [lambda-scala-boilerplate-cfn]
   lambda-scala-boilerplate-cfn:
     type: cloud-formation
+    app: lambda-scala-boilerplate
     parameters:
       prependStackToCloudFormationStackName: false
       cloudFormationStackName: lambda-scala-boilerplate
