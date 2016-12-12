@@ -14,7 +14,10 @@ class LambdaInput() {
 object Lambda extends App {
 
   /*
-   * These are passed in the CFN template and are lazy due to how the handler is called
+   * These are passed in the CFN template and are lazy due to how the handler is called.
+   * AWS calls the handler using java's reflection API, therefore the object isn't offered a chance to initialise
+   * This means all vals will remain null.
+   * Using lazy vals or delegating to another object/class are ways to work around the issue.
    */
   lazy val stack = Option(System.getenv("Stack")).getOrElse("DEV")
   lazy val stage = Option(System.getenv("Stage")).getOrElse("DEV")
