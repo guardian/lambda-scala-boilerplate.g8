@@ -30,14 +30,14 @@ object Lambda extends App {
    */
   def handler(lambdaInput: LambdaInput, context: Context): Unit = {
     val logger = context.getLogger
-    logger.log(s"Starting App: $app, Stack: $stack, Stage: $stage\n")
+    logger.log(s"Starting App: \$app, Stack: \$stack, Stage: \$stage\n")
     logger.log(process(lambdaInput.name))
   }
 
   /*
    * I recommend to put your logic outside the handler
    */
-  def process(name: String): String = s"Hello $name!\n"
+  def process(name: String): String = s"Hello \$name!\n"
 
   /*
    * so you can call your logic outside the lambda context, by running sbt run
