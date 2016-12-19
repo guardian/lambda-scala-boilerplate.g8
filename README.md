@@ -8,14 +8,19 @@
 * Automatically deploys the cloudformation via riff-raff
 
 ## Using this template
-No need to pull the project anymore, ensure you have at least sbt 13.13, then run
+No need to clone the project anymore, ensure you have at least sbt 13.13, then run
+
 `sbt new guardian/lambda-scala-boilerplate`
+
+Once you provided the relevant values through the wizard (name, stack and stuff), it should be deployable out of the box.
 
 ## Test locally
 use `sbt run` to test your lambda
 
 ## Set-up the build
-Set up your favourite continuous integration system to run `clean compile test riffRaffUpload`
+Set up your favourite continuous integration system to run
+
+`clean compile test riffRaffUpload`
 
 ## Deploy for the first time
 1. Upload the artifact using riff-raff. To do so, click [here](https://riffraff.gutools.co.uk/deployment/request), pick your project and build, then click on "Preview" .
