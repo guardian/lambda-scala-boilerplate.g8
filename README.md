@@ -7,12 +7,9 @@
 * Uses the new `riff-raff.yaml`
 * Automatically deploys the cloudformation via riff-raff
 
-## Customise
-1. Clone the repository
-2. Change the `name` value in `build.sbt`
-3. In `cfn.yaml` set sensible values for the `App`, `Stack` and `DeployBucket`
-3. Search and replace `lambda-scala-boilerplate` with the name of your lambda in `riff-raff.yaml`
-4. In `riff-raff.yaml` set values for `stacks`, `regions` and `bucket`
+## Using this template
+No need to pull the project anymore, ensure you have at least sbt 13.13, then run
+`sbt new guardian/lambda-scala-boilerplate`
 
 ## Test locally
 use `sbt run` to test your lambda

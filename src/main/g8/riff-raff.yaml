@@ -1,0 +1,19 @@
+stacks: [$stack$]
+regions: [eu-west-1]
+
+deployments:
+  $name;format="normalize"$:
+    type: aws-lambda
+    parameters:
+      bucket: $deployBucket$
+      functionNames: [$name;format="normalize"$-]
+      fileName: $name;format="normalize"$.jar
+      prefixStack: false
+    dependencies: [$name;format="normalize"$-cfn]
+  $name;format="normalize"$-cfn:
+    type: cloud-formation
+    app: $name;format="normalize"$
+    parameters:
+      prependStackToCloudFormationStackName: false
+      cloudFormationStackName: $name;format="normalize"$
+      templatePath: cfn.yaml
