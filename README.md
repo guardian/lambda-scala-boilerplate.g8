@@ -10,7 +10,7 @@
 ## Using this template
 No need to clone the project anymore, ensure you have at least sbt 13.13, then run
 
-`sbt new guardian/lambda-scala-boilerplate`
+`sbt new guardian/lambda-scala-boilerplate.g8`
 
 Once you provided the relevant values through the wizard (name, stack and stuff), it should be deployable out of the box.
 
