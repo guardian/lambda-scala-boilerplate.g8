@@ -1,5 +1,7 @@
 name := "$name;format="normalize"$"
 
+organization := "com.gu"
+
 version := "1.0"
 
 scalaVersion := "2.12.1"
