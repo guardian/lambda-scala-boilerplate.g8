@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: lambda-scala-boilerplate
+Description: $project_description$
 Parameters:
   Stack:
     Description: Stack name
