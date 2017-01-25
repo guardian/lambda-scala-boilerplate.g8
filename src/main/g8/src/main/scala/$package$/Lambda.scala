@@ -34,7 +34,7 @@ object Lambda {
     val logger = context.getLogger
     val env = Env()
     logger.log(s"Starting \$env")
-    logger.log(process(lambdaInput.name))
+    logger.log(process(lambdaInput.name, env))
   }
 
   /*
@@ -45,6 +45,6 @@ object Lambda {
 
 object TestIt {
   def main(args: Array[String]): Unit = {
-    Lambda.handler(args.headOption.getOrElse("Alex"))
+    println(Lambda.process(args.headOption.getOrElse("Alex"), Env()))
   }
 }
