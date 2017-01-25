@@ -62,7 +62,7 @@ Resources:
           Stage: !Ref Stage
           Stack: !Ref Stack
           App: !Ref App
-      Description: Your description here
+      Description: $project_description$
       Handler: $package$.Lambda::handler
       MemorySize: 128
       Role: !GetAtt ExecutionRole.Arn

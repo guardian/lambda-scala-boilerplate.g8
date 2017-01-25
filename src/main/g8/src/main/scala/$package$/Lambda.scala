@@ -2,15 +2,15 @@ package $package$
 
 import com.amazonaws.services.lambda.runtime.Context
 
-import scala.beans.BeanProperty
-
 /**
   * This is compatible with aws' lambda JSON to POJO conversion.
   * You can test your lambda by sending it the following payload:
   * {"name": "Bob"}
   */
 class LambdaInput() {
-  @BeanProperty var name: String = _
+  var name: String = _
+  def getName(): String = name
+  def setName(theName: String): Unit = name = theName
 }
 
 case class Env(app: String, stack: String, stage: String) {
