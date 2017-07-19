@@ -1,6 +1,7 @@
 package $package$
 
 import com.amazonaws.services.lambda.runtime.Context
+import org.slf4j.{Logger, LoggerFactory}
 
 /**
   * This is compatible with aws' lambda JSON to POJO conversion.
@@ -27,14 +28,15 @@ object Env {
 
 object Lambda {
 
+  val logger: Logger = LoggerFactory.getLogger(this.getClass)
+
   /*
    * This is your lambda entry point
    */
   def handler(lambdaInput: LambdaInput, context: Context): Unit = {
-    val logger = context.getLogger
     val env = Env()
-    logger.log(s"Starting \$env")
-    logger.log(process(lambdaInput.name, env))
+    logger.info(s"Starting \$env")
+    logger.info(process(lambdaInput.name, env))
   }
 
   /*

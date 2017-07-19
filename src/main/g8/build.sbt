@@ -6,7 +6,7 @@ description:= "$project_description$"
 
 version := "1.0"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.2"
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -16,7 +16,8 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.amazonaws" % "aws-lambda-java-core" % "$aws_lambda_java_core_version$"
+  "com.amazonaws" % "aws-lambda-java-core" % "$aws_lambda_java_core_version$",
+  "org.slf4j" % "slf4j-simple" % "$slf4j_simple_version$"
 )
 
 enablePlugins(RiffRaffArtifact)
