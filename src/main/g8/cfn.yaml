@@ -64,7 +64,7 @@ Resources:
           App: !Ref App
       Description: $project_description$
       Handler: $package$.Lambda::handler
-      MemorySize: 128
+      MemorySize: 1024
       Role: !GetAtt ExecutionRole.Arn
       Runtime: java8
       Timeout: 60
